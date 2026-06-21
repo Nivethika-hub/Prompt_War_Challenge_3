@@ -155,6 +155,16 @@ def apply_custom_css() -> None:
                 box-shadow: 0 10px 24px rgba(21, 128, 61, 0.07);
             }
 
+            [data-testid="stMetricValue"] {
+                color: var(--eco-text) !important;
+                font-weight: 800;
+            }
+
+            [data-testid="stMetricLabel"] {
+                color: var(--eco-muted) !important;
+                font-weight: 600;
+            }
+
             .stButton > button,
             .stFormSubmitButton > button {
                 background: linear-gradient(135deg, #16a34a, #0f766e);
@@ -406,7 +416,7 @@ def build_breakdown_chart(category_breakdown: Dict[str, Any]) -> go.Figure:
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         showlegend=True,
-        legend={"orientation": "h", "y": -0.08},
+        legend={"orientation": "h", "y": -0.08, "font": {"color": "#10231a"}},
         height=420,
     )
     return figure
